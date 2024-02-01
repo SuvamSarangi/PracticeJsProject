@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dropdown menu</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            
+        }
+
+        #container{
+            width: 100%;
+            height:100vh ;
+            position: relative;
+            margin: auto;
+            overflow: hidden;
+        }
+        #menu{
+            width: 50%;
+            /* height:200px ; */
+            background-color: rgb(49, 8, 86);
+            position: absolute;
+            top: 17%;
+            right: 20%;
+            padding: 50px 100px;
+            transition: top 1s;
+        }
+        #menu-icon{
+            width: 35px;
+            position:absolute;
+            top: 5%;
+            right: 10%;
+
+        }
+        #remove{
+            position: absolute;
+            top: 30px;
+            right: 30px;
+            display: flex;
+            align-items: center;
+        }
+        #remove img{
+            width: 50px;
+            margin-left: 20px;
+            cursor: pointer;
+        }
+        #remove a{
+            text-decoration: none;
+            color: #fff;
+            background-color:#f92537;
+            padding: 15px 40px;
+            border-radius: 10px;
+        }
+
+        .menu-link a{
+            text-decoration: none;
+            color: #fff;
+            display: block;
+            width: fit-content;
+            margin: 30px 0;
+            font-size: 36px;
+            
+        }
+        .menu-link a::after{
+            content: '';
+            width: 40px;
+            height: 5px;
+            background: #f92537;
+            display: none;
+            margin-left: 10px;
+            margin-bottom: 5px;
+        }
+        .menu-link a:hover{
+            font-weight: 700px;
+        }
+        .menu-link a:hover::after{
+            display: inline-block;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="container">
+        <img src="images\menu.png" id="menu-icon" onclick="openMenu()">
+        <div id="menu">
+            <div id="remove">
+                <a href="#">Get Started</a>
+                <img src="images\remove.png" onclick="closeMenu()">
+            </div>
+            <div class="menu-link">
+                <a href="#">Home</a>
+                <a href="#">About</a>
+                <a href="#">Contact</a>
+                <a href="#">Services</a>
+            </div>
+        </div>
+    
+    </div>
+    <script>
+        var menu = document.getElementById('menu');
+        function openMenu(){
+            menu.style.top = "17%";
+        }
+        function closeMenu(){
+            menu.style.top = "-100vh";
+        }
+        
+    </script>
+</body>
+</html>
